@@ -27,7 +27,25 @@ namespace WPFFILIPPOV_PR3
 
         private void Pusk_Click(object sender, RoutedEventArgs e)
         {
-
+            double x = Convert.ToDouble(X.Text);
+            double y = Convert.ToDouble(Y.Text);
+            double z = Convert.ToDouble(Z.Text);
+            Itog.Text = "Результат работы програмы ст. Филиппов К.П." + Environment.NewLine;
+            Itog.Text += "При X =" + X.Text + Environment.NewLine;
+            Itog.Text += "При Y =" + Y.Text + Environment.NewLine;
+            Itog.Text += "При Z =" + Z.Text + Environment.NewLine;
+            int n = 0;
+            double u;
+            if (Radio2.IsChecked == true) n = 1;
+            else if (Radio3.IsChecked == true) n = 2;
+            switch (n)
+            {
+                case 0:
+                    if ((z - x) == 0) u = y * Math.Sin(x) * Math.Sin(x) + z;
+                    else if ((z - x) < 0) u = y * Math.Exp(Math.Sin(x)) - z;
+                    else u = y * Math.Sin(Math.Sin(x)) + z;
+                    Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+            }
         }
     }
 }
