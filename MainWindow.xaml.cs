@@ -45,6 +45,22 @@ namespace WPFFILIPPOV_PR3
                     else if ((z - x) < 0) u = y * Math.Exp(Math.Sin(x)) - z;
                     else u = y * Math.Sin(Math.Sin(x)) + z;
                     Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+                    break;
+                case 1:
+                    if ((z - x) == 0) u = y * Math.Cos(x) * Math.Cos(x) + z;
+                    else if ((z - x) < 0) u = y * Math.Exp(Math.Cos(x)) - z;
+                    else u = y * Math.Sin(Math.Cos(x)) + z;
+                    Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+                    break;
+                case 2:
+                    if ((z - x) == 0) u = y * Math.Exp(x) * Math.Exp(x) + z;
+                    else if ((z - x) < 0) u = y * Math.Exp(Math.Exp(x)) - z;
+                    else u = y * Math.Sin(Math.Exp(x)) + z;
+                    Itog.Text += "U = " + Convert.ToString(u) + Environment.NewLine;
+                    break;
+                default:
+                    Itog.Text += "Решение не найдено" + Environment.NewLine;
+                    break;
             }
         }
     }
