@@ -24,5 +24,10 @@ namespace WPFFILIPPOV_PR3
         {
             InitializeComponent();
         }
+
+        private void Pusk_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
